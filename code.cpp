@@ -25,11 +25,12 @@ void dijkstra(string src, string dest) {
         dist[x.first] = INT_MAX;
     }
 
+    // min - priority queue <data type, container, comparator>
     priority_queue<
         pair<int, string>,
         vector<pair<int, string>>,
         greater<pair<int, string>>
-    > pq;
+    > pq; // stores distance from source and location {dist, location}
 
     dist[src] = 0;
     pq.push({0, src});
@@ -197,7 +198,9 @@ int main(int argc, char* argv[])
 
         //Others
     addNode("Basement Workshop");
-    addNode("Third Floor");
+    addNode("Third Floor Entrance 1");
+    addNode("Third Floor Entrance 2");
+    addNode("Third Floor Entrance 3");
 
     // 2. INSERT CONNECTIONS (EDGES)
     // Format: addEdge(location1, location2, distance);
@@ -243,12 +246,14 @@ int main(int argc, char* argv[])
     addEdge("Staircase 1a", "Block 1A Entrance 1", 1);
     addEdge("Block 1A Entrance 1", "Staircase 1c", 8);
     addEdge("Staircase 1c", "Staircase 1b", 2);
+    addEdge("Staircase 1d", "Staircase 1b", 2);
     addEdge("Staircase 1c", "Staircase 1d", 3);
     addEdge("Staircase 1d", "EDD Lab", 1);
     addEdge("Block 1A Entrance 2", "Staircase 1d", 3);
     addEdge("Block 1A Entrance 2", "Cafe", 8);
     addEdge("Cafe", "Faculty Block 1B", 2);
     addEdge("Faculty Block 1B", "Staircase 1f", 2);
+    addEdge("Staircase 1e", "Staircase 1f", 2);
     addEdge("Faculty Block 1B", "Staircase 1e", 2);
     addEdge("Staircase 1e", "Block 1B Entrance 1", 7);
     addEdge("Block 1B Entrance 1", "BE Lab 2", 9);
@@ -281,9 +286,13 @@ int main(int argc, char* argv[])
     addEdge("Washroom 2b", "Staircase 2e", 1);
 
         // Second floor to other floors:
-    addEdge("Staircase 2a", "Third Floor", 10);
-    addEdge("Staircase 2c", "Third Floor", 10);
-    addEdge("Staircase 2e", "Third Floor", 10);
+    addEdge("Staircase 2a", "Third Floor Entrance 1", 10);
+    addEdge("Staircase 2c", "Third Floor Entrance 2", 10);
+    addEdge("Staircase 2e", "Third Floor Entrance 3", 10);
+
+        // Others
+    addEdge("Third Floor Entrance 1", "Third Floor Entrance 2", 10);
+    addEdge("Third Floor Entrance 2", "Third Floor Entrance 3", 18);
 
     if (argc < 3) {
         return 1;

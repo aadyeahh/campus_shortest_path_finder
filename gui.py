@@ -36,7 +36,7 @@ floors = {
         "Block 2B Entrance 2", "Block 2C", "Phy Lab 2"
     ],
 
-    "Third Floor": ["Third Floor"]
+    "Third Floor": ["Third Floor Entrance 1", "Third Floor Entrance 2", "Third Floor Entrance 3"]
 }
 
 
