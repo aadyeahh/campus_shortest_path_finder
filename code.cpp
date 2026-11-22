@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-map<string, vector<pair<string, int>>> adj;
+map<string, vector<pair<string, int>>> adj; // Location, it's neighbours and the distance between them
 
 // Function to add a location
 void addNode(string name) {
@@ -17,9 +17,10 @@ void addEdge(string u, string v, int w) {
 // Dijkstra's Algorithm
 void dijkstra(string src, string dest) {
 
-    map<string, int> dist;
-    map<string, string> parent;
+    map<string, int> dist; //Stores the shortest known distance from the source to every location.
+    map<string, string> parent; //Stores the previous location in the shortest path.
 
+    // Initially, we assume that every location is infinitely far away.
     for (auto x : adj) {
         dist[x.first] = INT_MAX;
     }
