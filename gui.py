@@ -1,5 +1,9 @@
+import os
+from PIL import Image, ImageTk
+
 import tkinter as tk
 from tkinter import ttk, messagebox
+
 import subprocess
 
 # Locations on each floor
@@ -93,6 +97,76 @@ current_floor.bind(
     lambda event: update_location(current_floor, current_location)
 )
 
+def show_floor_plans():
+
+    window = tk.Toplevel(root)
+    window.title("College Floor Plans")
+    window.geometry("1000x750")
+    window.configure(bg="#f2f4f7")
+
+    heading = tk.Label(
+        window,
+        text="COLLEGE FLOOR PLANS",
+        font=("Arial", 18, "bold"),
+        bg="#f2f4f7",
+        fg="#202b45"
+    )
+    heading.pack(pady=15)
+
+    notebook = ttk.Notebook(window)
+    notebook.pack(fill="both", expand=True, padx=15, pady=10)
+
+    plans = {
+        "Ground Floor": "ground.png",
+        "First Floor": "first.png",
+        "Second Floor": "second.png"
+    }
+
+    window.images = []
+
+    for floor, filename in plans.items():
+
+        frame = ttk.Frame(notebook)
+        notebook.add(frame, text=floor)
+
+        image_path = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "floor_plans",
+            filename
+        )
+
+        try:
+            img = Image.open(image_path)
+
+            img.thumbnail((950, 620))
+
+            photo = ImageTk.PhotoImage(img)
+
+            label = tk.Label(frame, image=photo)
+            label.pack(expand=True)
+
+            window.images.append(photo)
+
+        except Exception as e:
+
+            tk.Label(
+                frame,
+                text="Could not load floor plan:\n" + str(e),
+                font=("Arial", 12)
+            ).pack(expand=True)
+
+plan_button = tk.Button(
+    root,
+    text="VIEW COLLEGE FLOOR PLANS",
+    font=("Arial", 10, "bold"),
+    bg="#e1e7f0",
+    fg="#273c75",
+    command=show_floor_plans,
+    padx=15,
+    pady=8
+)
+
+plan_button.pack(pady=5)
 
 # Destination section
 tk.Label(
@@ -191,6 +265,5 @@ result_label = tk.Label(
     pady=15
 )
 result_label.pack(padx=25, fill="x")
-
 
 root.mainloop()
