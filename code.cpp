@@ -176,6 +176,23 @@ int main(int argc, char* argv[])
     //addNode("Anti-Sexual Harassment Cell");
     addNode("Cafe");
     addNode("BE Lab 2");
+    addNode("111");
+    addNode("113");
+    addNode("116");
+    addNode("117");
+    addNode("Faculty Block 1A");
+    addNode("127");
+    addNode("118A");
+    addNode("118B");
+    addNode("121");
+    addNode("123");
+    addNode("153");
+    addNode("148");
+    addNode("CR 60");
+    addNode("CL 4");
+    addNode("VLSI Lab");
+    addNode("138");
+    addNode("CIC Lab");
 
         //Second Floor:
     addNode("Washroom 2a");
@@ -195,6 +212,30 @@ int main(int argc, char* argv[])
     addNode("Block 2B Entrance 2");
     addNode("Block 2C");
     addNode("Phy Lab 2");
+    addNode("217");
+    addNode("Mobile Technology Lab");
+    addNode("Analogue and Digital Electronics Lab");
+    addNode("226");
+    addNode("225");
+    addNode("Faculty Block 2A1");
+    addNode("228");
+    addNode("229");
+    addNode("230");
+    addNode("234");
+    addNode("Electromagnetic Lab");
+    addNode("Embedded System and IoT Lab");
+    addNode("Language Lab 1");
+    addNode("241A");
+    addNode("241B");
+    addNode("Faculty Block 2B1");
+    addNode("244A");
+    addNode("244B");
+    addNode("263");
+    addNode("Language Lab 2");
+    addNode("259");
+    addNode("254");
+    addNode("DSP Lab");
+    addNode("Communication System Lab");
 
         //Others
     addNode("Basement Workshop");
@@ -256,10 +297,29 @@ int main(int argc, char* argv[])
     addEdge("Staircase 1e", "Staircase 1f", 2);
     addEdge("Faculty Block 1B", "Staircase 1e", 2);
     addEdge("Staircase 1e", "Block 1B Entrance 1", 7);
-    addEdge("Block 1B Entrance 1", "BE Lab 2", 9);
+    addEdge("Block 1B Entrance 1", "VLSI Lab", 1);
+    addEdge("VLSI Lab", "CIC Lab", 1);
+    addEdge("CIC Lab", "138", 1);
+    addEdge("138", "BE Lab 2", 1);
     addEdge("Block 1B Entrance 1", "Block 1C", 3);
+    addEdge("Block 1C", "153", 1);
+    addEdge("Block 1C", "148", 1);
+    addEdge("148", "CL 4", 1);
+    addEdge("CL 4", "CR 60", 1);
+    addEdge("CR 60", "153", 1);
     addEdge("Block 1C", "Washroom 1b", 3);
     addEdge("Washroom 1b", "Staircase 1g", 1);
+    addEdge("Block 1A Entrance 1", "111", 1);
+    addEdge("111", "113", 1);
+    addEdge("113", "116", 1);
+    addEdge("116", "127", 1);
+    addEdge("116", "117", 1);
+    addEdge("117", "Faculty Block 1A", 1);
+    addEdge("Faculty Block 1A", "118A", 1);
+    addEdge("118A", "118B", 1);
+    addEdge("118B", "121", 1);
+    addEdge("121", "123", 1);
+    addEdge("123", "Block 1A Entrance 2", 1);
 
         // First floor to other floors:
     addEdge("Staircase 1a", "Staircase 2a", 10);
@@ -278,12 +338,39 @@ int main(int argc, char* argv[])
     addEdge("Staircase 2b", "Staircase 2d", 8);
     addEdge("Staircase 2d", "Faculty Block 2B", 2);
     addEdge("Staircase 2d", "Block 2B Entrance 1", 1);
-    addEdge("Block 2B Entrance 1", "Block 2B Entrance 2", 10);
     addEdge("Block 2B Entrance 2", "Faculty Block 2C", 1);
     addEdge("Faculty Block 2C", "Block 2C", 3);
-    addEdge("Block 2C", "Phy Lab 2", 3);
+    addEdge("Block 2C", "259", 1);
+    addEdge("Block 2C", "254", 1);
+    addEdge("259", "Phy Lab 2", 1);
+    addEdge("Phy Lab 2", "Communication System Lab", 1);
+    addEdge("Communication System Lab", "DSP Lab", 1);
+    addEdge("DSP Lab", "254", 1);
     addEdge("Block 2C", "Washroom 2b", 3);
     addEdge("Washroom 2b", "Staircase 2e", 1);
+    addEdge("Block 2A Entrance 1", "217", 1);
+    addEdge("217", "Mobile Technology Lab", 1);
+    addEdge("Mobile technology Lab", "Analogue and Digital Electronics Lab", 1);
+    addEdge("Analogue and Digital Electronics Lab", "226", 1);
+    addEdge("Analogue and Digital Electronics Lab", "225", 1);
+    addEdge("225", "226", 1);
+    addEdge("226", "Faculty Block 2A1", 1);
+    addEdge("Faculty Block 2A1", "228", 1);
+    addEdge("228", "229", 1);
+    addEdge("225", "229", 1);
+    addEdge("228", "230", 1);
+    addEdge("230", "234", 1);
+    addEdge("234", "Electromagnetic Lab", 1);
+    addEdge("Electromagnetic Lab", "Block 2A Entrance 2", 1);
+    addEdge("Block 2B Entrance 1", "Embedded System and IoT Lab", 1);
+    addEdge("Embedded System and IoT Lab", "Language Lab 2", 1);
+    addEdge("Language Lab 2", "241A", 1);
+    addEdge("241A", "241B", 1);
+    addEdge("241B", "Faculty Block 2B1", 1);
+    addEdge("Faculty Block 2B1", "244A", 1);
+    addEdge("244A", "244B", 1);
+    addEdge("244B", "Language Lab 2", 1);
+    addEdge("Language Lab 2", "Faculty Block 2C", 1);
 
         // Second floor to other floors:
     addEdge("Staircase 2a", "Third Floor Entrance 1", 10);
